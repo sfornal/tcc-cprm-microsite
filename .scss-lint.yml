@@ -1,0 +1,324 @@
+# Default application configuration that all configurations inherit from.
+
+scss_files: "src/scss/*.scss"
+plugin_directories: ['.scss-linters']
+
+# List of gem names to load custom linters from (make sure they are already
+# installed)
+plugin_gems: []
+
+linters:
+    # One space before `!` and none after
+    BangFormat:
+        enabled: true
+        space_before_bang: true
+        space_after_bang: false
+
+    # Disabled since we don't use standard BEM __ format
+    BemDepth:
+        enabled: false
+        max_elements: 1
+
+    # We prefer the more explicit `border: none` in our source
+    BorderZero:
+        enabled: true
+        convention: none
+
+    # This helps make sure we aren't using a keyword instead
+    # of a variable by accident
+    ColorKeyword:
+        enabled: true
+
+    ColorVariable:
+        enabled: true
+
+    # TCC Style is to use // comments only in our SCSS
+    Comment:
+        enabled: true
+
+    # Checks to see if you left any @debug in your code. Don't do that.
+    DebugStatement:
+        enabled: true
+
+    # Proper declaration order is @extend, @include without content blocks,
+    # normal properties, @include with nested @content blocks, and then
+    # nested rule sets.
+    DeclarationOrder:
+        enabled: true
+
+    # If you are disabling linters using a control comment, you
+    # must precede it with a comment explaining why
+    DisableLinterReason:
+        enabled: true
+
+    # Duplicate properties are an indicator of hasty/smelly code usually
+    # If a duplicate property is needed, you will have to precede the
+    # block with a explanation comment and control comment, like so:
+    # // Using background-color twice as a fallback for non-rgba browsers
+    # // scss-lint:disable DuplicateProperty
+    DuplicateProperty:
+        enabled: true
+
+    # TCC Prefers @else on its own line
+    ElsePlacement:
+        enabled: true
+        style: new_line
+
+    # At TCC, white space is our friend
+    EmptyLineBetweenBlocks:
+        enabled: true
+        ignore_single_line_blocks: true
+
+    # Empty rules should be removed, or filled in
+    EmptyRule:
+        enabled: true
+
+    # See PlaceholderInExtend below
+    ExtendDirective:
+        enabled: false
+
+    # All files should end in a final newline
+    FinalNewline:
+        enabled: true
+        present: true
+
+    # Just making sure you have a real color, in lowercase hex, and
+    # shortened (i.e. `#fff` vs `#ffffff`) where possible
+    HexLength:
+        enabled: true
+        style: short
+
+    HexNotation:
+        enabled: true
+        style: lowercase
+
+    HexValidation:
+        enabled: true
+
+    # Never use ID selectors! Should always be classes
+    IdSelector:
+        enabled: true
+
+    # Never use !important
+    # If somehow it must be done, you will have to create a linter
+    # override and comment explanation, like so:
+    # // Using !important because ...
+    # // scss-lint:disable ImportantRule
+    ImportantRule:
+        enabled: true
+
+    # When importing ./_partials/_module.scss, your import rule
+    # should look like:
+    # @import 'partials/module';
+    ImportPath:
+        enabled: true
+        leading_underscore: false
+        filename_extension: false
+
+    # TCC Coding style is 4-space indentation. Use your editor intelligently
+    # to accommodate that style
+    Indentation:
+        enabled: true
+        allow_non_nested_indentation: false
+        character: space
+        width: 4
+
+    # TCC Style is to use leading zeros in the SCSS source, for readability
+    LeadingZero:
+        enabled: true
+        style: include_zero
+
+    # Helps you find unoptimized rule sets. Merge duplicates, and
+    # nest when possible
+    MergeableSelector:
+        enabled: true
+        force_nesting: true
+
+    # SASS variables should be $lowercase-and-hyphenated
+    NameFormat:
+        enabled: true
+        allow_leading_underscore: true
+        convention: hyphenated_lowercase
+
+    # Depth of applicability should never exceed 3, and should
+    # ideally be two at most
+    NestingDepth:
+        enabled: true
+        max_depth: 3
+        ignore_parent_selectors: false
+
+    # Only use the SASS @extend with a placehodler selector
+    # Like %error
+    PlaceholderInExtend:
+        enabled: true
+
+    # At this time, we are not linting property count, but 10
+    # is a good max as a rule-of-thumb
+    PropertyCount:
+        enabled: false
+        include_nested: false
+        max_properties: 10
+
+    # Sort your properties alphabetically. Most editors support this,
+    # check your favorite editors documentation, and map a keyboard
+    # command to make this dead easy
+    PropertySortOrder:
+        enabled: true
+        ignore_unspecified: false
+        min_properties: 2
+        separate_groups: false
+
+    # Just a check to help you find typos...
+    # We can add new/experimental properties to the array if needed
+    PropertySpelling:
+        enabled: true
+        extra_properties: []
+
+    # Allowed unit values
+    PropertyUnits:
+        enabled: true
+        global: [
+          'ch', 'em', 'ex', 'rem',         # Font-relative lengths
+          'px', 'q',                       # Absolute lengths
+          'vh', 'vw', 'vmin', 'vmax',      # Viewport-percentage lengths
+          'deg', 'grad', 'rad', 'turn',    # Angle
+          'ms', 's',                       # Duration
+          'Hz', 'kHz',                     # Frequency
+          'dpi', 'dpcm', 'dppx',           # Resolution
+          '%']                             # Other
+        properties:
+            line-height: []                # Only unit-less line-height
+            border: ['px']                 # Only pixel borders
+
+    # Selectors shouldn't qualify with tags. For example:
+    # a.button should just be .button
+    QualifyingElement:
+        enabled: true
+        allow_element_with_attribute: false
+        allow_element_with_class: false
+        allow_element_with_id: false
+
+    # Maximum depth of applicability for selectors should be 3, but
+    # ideally 2
+    SelectorDepth:
+        enabled: true
+        max_depth: 3
+
+    # The TCC standard for selector names is hyphenated-lowercase, and
+    # classes in particular should follow our modified BEM format,
+    # camelCaseBlock-camelCaseElement--camelCaseModifier
+    SelectorFormat:
+        enabled: true
+        convention: hyphenated_lowercase
+        class_convention: ^([a-z]\w*)(\-{1,2}[a-z]\w*)*
+
+    # Shorthand properties are a-okay, and should be used when possible
+    Shorthand:
+        enabled: true
+        allowed_shorthands: [1, 2, 3]
+
+    # One property per line, or everything including braces on one line
+    # Example of everything on one line:
+    # a { padding: 0; margin: 0; }
+    SingleLinePerProperty:
+        enabled: true
+        allow_single_line_rule_sets: true
+
+    # One line per selector, split on commas
+    SingleLinePerSelector:
+        enabled: true
+
+    # All commas in lists must be followed by a single space
+    SpaceAfterComma:
+        enabled: true
+
+    # *Exactly* one space after the colon
+    SpaceAfterPropertyColon:
+        enabled: true
+        style: one_space
+
+    # Weirdly named rules. True here means no space before colon
+    SpaceAfterPropertyName:
+        enabled: true
+
+    SpaceAfterVariableName:
+        enabled: true
+
+    # One space on each side of an operator
+    SpaceAroundOperator:
+        enabled: true
+        style: one_space
+
+    # One space before the open brace, brace on same line as
+    # the final selector
+    SpaceBeforeBrace:
+        enabled: true
+        style: space
+        allow_single_line_padding: true # Allows nice formatting on single-line blocks
+
+    # No padding inside parens
+    SpaceBetweenParens:
+        enabled: true
+        spaces: 0
+
+    # Single quotes only, unless double quotes makes escaping easier
+    StringQuotes:
+        enabled: true
+        style: single_quotes
+
+    # Semi-colon always required!!
+    TrailingSemicolon:
+        enabled: true
+
+    # Clean up your line ends. Your editor can probably do it for you
+    TrailingWhitespace:
+        enabled: true
+
+    # No unnecessary trailing zeros
+    TrailingZero:
+        enabled: false
+
+    # No transition all allowed
+    TransitionAll:
+        enabled: false
+
+    # No 1.0em, use 1em, etc.
+    UnnecessaryMantissa:
+        enabled: true
+
+    # Helps eliminate unneeded parent references in SASS code
+    UnnecessaryParentReference:
+        enabled: true
+
+    # Only use relative URLs in our SASS sheets, and always single quote them
+    UrlFormat:
+        enabled: true
+
+    UrlQuotes:
+        enabled: true
+
+    # Some properties should always be defined as variables, to make
+    # the code base more readable and maintainable in the future
+    VariableForProperty:
+        enabled: true
+        properties:
+            - font-family
+            - color
+            - background-color
+            - border-color
+            - outline-color
+
+    # TCC uses Autoprefixer, so don't write vendor prefixes in the code
+    VendorPrefix:
+        enabled: true
+        identifier_list: base
+        additional_identifiers: []
+        excluded_identifiers: []
+
+    # Yup, no units on zero values
+    ZeroUnit:
+        enabled: true
+
+    # Compass is not our framework, so don't lint it
+    Compass::*:
+        enabled: false

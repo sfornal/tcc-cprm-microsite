@@ -1,0 +1,25 @@
+{
+  "name": "tcc-cprm-microsite",
+  "description": "Vanity landing site created for PR",
+  "main": "src/index.html",
+  "authors": [
+    "Stephen Fornal"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "jquery": "*",
+    "velocity": "~1.2.3",
+    "picturefill": "~3.0.1"
+  }
+}

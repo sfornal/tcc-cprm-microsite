@@ -1,0 +1,5 @@
+@mixin gotham($weight: 400, $style: normal) {
+    font-family: $gotham;
+    font-weight: $weight;
+    font-style: $style;
+}
