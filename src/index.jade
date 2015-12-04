@@ -9,19 +9,21 @@ block head
 
 block content
     .pageWrap
-        header.header(role="header")
+        header.header.gradientTextureBg(role="header")
             .innerWrap(role="banner")
                 h1#pageHeading.visuallyhidden Check Your List — Are You On It?
                 img.header-banner(role="presentation" alt="" src="img/header.svg" aria-labelledby="pageHeading")
 
         main.main(role="main")
             .lede.innerWrap
-                h2 Congratulations!
+                h2.lede-heading Congratulations!
                 p Do you want a better job? A new career? A fresh start? To reconnect with a forgotten interest?
                 p You’ve taken the important first step in finding your Success Within Reach: You’re here! All you have to do is #[a(href="http://www.tccd.edu/Admissions/Apply/index.html") apply].
                 p So, what's stopping you?
                 
             .checklist.innerWrap
+                h2.checklist-tagline So, what's in your way?
+                
                 // Cost barrier
                 .checklist-itemWrap
                     .checklist-headingWrap
@@ -72,3 +74,27 @@ block content
                                         li: a(href="") The Bridge
                                 li: a(href="") Supplemental Instruction
                                 li: a(href="") Learning Labs &amp;&nbsp;Tutoring (including 24/7 online tutoring)
+        .requestInfo
+            .requestInfo-formWrap.innerWrap
+                .requestInfo-headingWrap
+                    h2.requestInfo-heading Request Information
+                    p I'm ready to make myself a priority! Please send me information to help me get started.
+                form.requestInfo-form(action="#" method="post")
+                    .form-inputWrap
+                        label.form-label(for="fullName") Full Name
+                        input.form-input#fullName(type="text" name="fullName" placeholder="Jessica Jones" required)
+                    
+                    .form-inputWrap
+                        label.form-label(for="email") Email
+                        input.form-input#email(type="email" name="email" placeholder="jessica@aliasinvestigations.com" required)
+
+                    input.button.button--submit#submit(type="submit" value="submit" name="submit")
+                    
+        
+        footer.footer.gradientTextureBg(role="footer")
+            .footer-footerWrap.innerWrap
+                img.footer-logo(role="banner" alt="Tarrant County College—Success Within Reach" src="img/tcc-logo.svg")
+                p.footer-requiredLinks #[a(href="/") Legal Notices] &middot; #[a(href="/") Report Fraud]
+                
+                p.footer-copyright &copy; Tarrant County College &mdash; All rights reserved
+                
