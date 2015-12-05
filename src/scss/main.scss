@@ -16,18 +16,18 @@ html {
 
 body {
     @include gotham();
-    color: $blue;
     background-color: $white;
+    color: $blue;
 }
 
 .gradientTextureBg {
-    background: url(../img/texture.png), radial-gradient($gradient-start 40%, $gradient-stop);
+    background: url('../img/texture.png'), radial-gradient($gradient-start 40%, $gradient-stop);
     background-color: $blue;
 }
 
 .innerWrap {
-    max-width: $max-width;
     margin: 0 auto;
+    max-width: $max-width;
     padding: 20px 24px;
 }
 
@@ -43,37 +43,57 @@ body {
 }
 
 .footer {
+    @include gotham($size: 8px);
+
     color: $white;
     text-align: center;
 
-    @include gotham($size: 8px);
-}
-
-.footer a {
-    color: inherit;
-    text-decoration: none;
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 }
 
 .footer-logo {
     display: block;
-    max-width: 200px;
     margin: 0 auto 20px;
+    max-width: 200px;
 }
 
 h2 {
-    margin-bottom: 10px;
     @include gotham(1.375rem, 800);
+
+    margin-bottom: 10px;
 }
 
 a {
+    @include gotham(inherit, 700);
+
     color: inherit;
     text-decoration: none;
-
-    @include gotham(inherit, 700);
 
     &:hover,
     &:focus,
     &:active {
         text-decoration: underline;
     }
+}
+
+.checklistWrap {
+    background-color: $gray;
+    margin: 20px 0;
+    position: relative;
+
+    &:before,
+    &:after {
+        background: url('../img/jagged-border.svg') repeat-x top left/40px 40px;
+        content: '';
+        display: block;
+        height: 40px;
+        position: absolute;
+        width: 100%;
+    }
+
+    &:before { top: -20px; }
+    &:after { bottom: -20px; }
 }

@@ -10,8 +10,9 @@
 
 //Hide only visually, but have it available for screen readers:
 //http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-
 .visuallyhidden {
+    // Ignore liner rule for border to maintain code from h5bp
+    // scss-lint:disable BorderZero
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
