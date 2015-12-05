@@ -49,6 +49,7 @@ tmp/
 # Comment the following line for projects that expect the distribution
 # build to be in the repo
 dist/
+src/vendor
 
 # Visual Studio #
 ################################################################################
