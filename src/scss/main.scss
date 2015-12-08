@@ -36,6 +36,10 @@ body {
     text-align: center;
 }
 
+.header-banner {
+    filter: drop-shadow(4px 4px 5px transparentize($black, 0.8));
+}
+
 .lede,
 .checklist-tagline,
 .requestInfo-headingWrap {
@@ -86,7 +90,7 @@ a {
 
     &:before,
     &:after {
-        background: url('../img/jagged-border.svg') repeat-x top left/40px 40px;
+        background: url('../img/jagged-border.svg') repeat-x top left / 40px 40px;
         content: '';
         display: block;
         height: 40px;
@@ -96,4 +100,112 @@ a {
 
     &:before { top: -20px; }
     &:after { bottom: -20px; }
+}
+
+.checklist-heading {
+    @include gotham(1.75rem, 700);
+
+    background: linear-gradient(to top, $gradient-bottom, $gradient-top);
+    border-radius: $border-radius;
+    color: $white;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 1px transparentize($black, 0.8));
+    line-height: 1;
+    margin: 0 0 7px;
+    padding: 0.875rem 0;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px 1px transparentize($black, 0.8);
+    // width: calc(100% - 1.75rem);
+}
+
+.checklist-heading-iconWrap {
+    display: block;
+    height: 3.5rem;
+    perspective: 1000;
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 4.5rem;
+}
+
+.checklist-heading-icon {
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    width: 100%;
+
+    .solved & {
+        transform: rotateX(180deg);
+    }
+}
+
+.checklist-icon-front {
+    backface-visibility: hidden;
+    background: url('../img/hexagon-teal.svg') no-repeat center center / auto 100%;
+    display: block;
+    height: 100%;
+    position: absolute;
+    transform: rotateY(0deg);
+    width: 100%;
+    z-index: 2;
+}
+
+.checklist-icon-front-inner {
+    background: url('../img/question-mark.svg') no-repeat center center / auto 66%;
+    display: block;
+    filter: drop-shadow(2px 2px 1px transparentize($black, 0.8));
+    height: 100%;
+    width: 100%;
+}
+
+.checklist-icon-back {
+    backface-visibility: hidden;
+    background: url('../img/hexagon-green.svg') no-repeat center center / auto 100%;
+    display: block;
+    height: 100%;
+    position: absolute;
+    transform: rotateX(180deg);
+    width: 100%;
+}
+
+.checklist-icon-back-inner {
+    background: url('../img/thumbs-up.svg') no-repeat center center / auto 66%;
+    display: block;
+    filter: drop-shadow(2px 2px 1px transparentize($black, 0.8));
+    height: 100%;
+    width: 100%;
+}
+
+
+.checklist-reasons {
+    background: $white;
+    border-radius: 0 0 $border-radius $border-radius;
+    box-shadow: 2px 2px 2px transparentize($black, 0.8);
+    line-height: 1.33;
+    margin: -7px 10px 10px;
+    padding: 10px;
+    text-align: left;
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    ul,
+    ol {
+        margin-bottom: 1rem;
+        padding-left: 3rem;
+    }
+}
+
+.isClosed {
+    display: none;
+    height: 0;
+
+    //If features aren't available, make sure content is shown
+    .basic-page & {
+        display: block;
+        height: auto;
+    }
 }
