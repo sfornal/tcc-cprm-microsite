@@ -135,10 +135,6 @@ a {
     transform-style: preserve-3d;
     transition: 0.5s;
     width: 100%;
-
-    .solved & {
-        transform: rotateX(180deg);
-    }
 }
 
 .checklist-icon-front {
@@ -168,6 +164,10 @@ a {
     position: absolute;
     transform: rotateX(180deg);
     width: 100%;
+
+    .basic-page & {
+        display: none;
+    }
 }
 
 .checklist-icon-back-inner {
