@@ -88,8 +88,8 @@ a {
     margin: 20px 0;
     position: relative;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         background: url('../img/jagged-border.svg') repeat-x top left / 40px 40px;
         content: '';
         display: block;
@@ -98,8 +98,8 @@ a {
         width: 100%;
     }
 
-    &:before { top: -20px; }
-    &:after { bottom: -20px; }
+    &::before { top: -20px; }
+    &::after { bottom: -20px; }
 }
 
 .checklist-heading {
