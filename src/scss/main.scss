@@ -126,7 +126,7 @@ a {
     position: absolute;
     right: -20px;
     top: 0;
-    width: 4.5rem;
+    width: 4.2rem;
 }
 
 .checklist-heading-icon {
@@ -143,7 +143,7 @@ a {
 
 .checklist-icon-front {
     backface-visibility: hidden;
-    background: url('../img/hexagon-teal.svg') no-repeat center center / auto 100%;
+    background: url('../img/hexagon-teal.svg') no-repeat center center / cover;
     display: block;
     height: 100%;
     position: absolute;
@@ -162,7 +162,7 @@ a {
 
 .checklist-icon-back {
     backface-visibility: hidden;
-    background: url('../img/hexagon-green.svg') no-repeat center center / auto 100%;
+    background: url('../img/hexagon-green.svg') no-repeat center center / cover;
     display: block;
     height: 100%;
     position: absolute;
