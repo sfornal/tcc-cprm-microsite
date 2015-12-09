@@ -12,6 +12,10 @@
 
 html {
     font-size: 100%;
+
+    @media (min-width: 600px) {
+        font-size: 125%;
+    }
 }
 
 body {
@@ -38,12 +42,16 @@ body {
 
 .header-banner {
     filter: drop-shadow(4px 4px 5px transparentize($black, 0.8));
+    margin-top: 14px;
 }
 
 .lede,
 .checklist-tagline,
 .requestInfo-headingWrap {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
     text-align: center;
+
 }
 
 .footer {
@@ -72,15 +80,13 @@ h2 {
 
 a {
     @include gotham(inherit, 700);
+    $lightblue: lighten($blue, 10%);
+    color: $lightblue;
+    text-decoration: underline;
+}
 
-    color: inherit;
-    text-decoration: none;
-
-    &:hover,
-    &:focus,
-    &:active {
-        text-decoration: underline;
-    }
+.checklist-tagline {
+    margin-bottom: 2rem;
 }
 
 .checklistWrap {
@@ -102,21 +108,56 @@ a {
     &::after { bottom: -20px; }
 }
 
+.checklist-itemWrap {
+    margin: 0 auto 7px;
+    max-width: 550px;
+}
+
 .checklist-heading {
     @include gotham(1.75rem, 700);
 
     background: linear-gradient(to top, $gradient-bottom, $gradient-top);
     border-radius: $border-radius;
     color: $white;
-    cursor: pointer;
+    display: block;
     filter: drop-shadow(2px 2px 1px transparentize($black, 0.8));
     line-height: 1;
     margin: 0 0 7px;
-    padding: 0.875rem 0;
+    padding: 0.875rem calc(2.1rem) 0.875rem 0;
     position: relative;
     text-align: center;
+    text-decoration: none;
     text-shadow: 1px 1px 1px transparentize($black, 0.8);
-    // width: calc(100% - 1.75rem);
+    width: 100%;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: linear-gradient(to top, lighten($gradient-bottom, 10%), lighten($gradient-top, 10%));
+        outline: none;
+        text-decoration: none;
+    }
+
+    &.solved {
+        text-decoration: line-through;
+
+        &::before {
+            background: $green;
+            border-radius: $border-radius 0 0 $border-radius;
+            content: '';
+            display: block;
+            height: 3.75rem;
+            left: -6px;
+            position: absolute;
+            top: -0.125rem;
+            width: 12px;
+            z-index: 3;
+        }
+
+        .basic-page & {
+            text-decoration: none;
+        }
+    }
 }
 
 .checklist-heading-iconWrap {
@@ -185,7 +226,7 @@ a {
     box-shadow: 2px 2px 2px transparentize($black, 0.8);
     line-height: 1.33;
     margin: -7px 10px 10px;
-    padding: 10px;
+    padding: 15px 10px;
     text-align: left;
 
     p {
@@ -207,5 +248,87 @@ a {
     .basic-page & {
         display: block;
         height: auto;
+    }
+}
+
+//Request Info Form styling
+.requestInfo-form {
+    margin: 0 auto;
+    max-width: 400px;
+    padding-left: 20px;
+}
+
+.form-inputWrap {
+    margin: 1rem 0;
+
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+    }
+
+    &:after { clear: both; }
+
+    label {
+        @include gotham(0.8125rem, 400);
+        display: block;
+        margin-bottom: 3px;
+    }
+
+    [type='text'],
+    [type='email'] {
+        @include gotham(0.8125rem, 400, italic);
+        -webkit-appearance: none;
+        background: $white;
+        border: 1px solid $blue;
+        border-radius: $border-radius;
+        display: block;
+        padding: 5px 4px 4px;
+        width: 100%;
+    }
+}
+
+.button {
+    @include gotham(1.125rem, 800);
+
+    -webkit-appearance: none;
+    background: $blue;
+    border: none;
+    border-radius: $border-radius;
+    color: $white;
+    padding: 5px 8px 3px;
+}
+
+.button--submit {
+    display: block;
+    float: right;
+}
+
+.requestInfo-phoneNumber {
+    @include gotham(1.125rem, 700);
+    color: $green;
+}
+
+.requestInfo-formResponse {
+    display: none;
+
+    .response--error,
+    .response--success {
+        @include gotham(0.825rem, 400);
+
+        border-radius: $border-radius;
+        box-shadow: 2px 2px 2px transparentize($black, 0.8);
+        padding: 10px 20px;
+    }
+
+    .response--error {
+        background: $red;
+        border: 1px solid darken($red, 10%);
+        color: $white;
+    }
+
+    .response--success {
+        background: lighten($green, 20%);
+        border: 1px solid $green;
     }
 }
