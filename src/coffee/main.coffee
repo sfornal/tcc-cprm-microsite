@@ -1,4 +1,5 @@
 # Main JS for project
+errorMsg = ''
 
 $('.checklist-heading').on 'click', (e) ->
         e.preventDefault()
@@ -38,7 +39,7 @@ $('#requestInfoForm').on 'submit', (e) ->
         $('.field--invalid').velocity 'callout.shake'
         $('.requestInfo-formResponse')
             .empty()
-            .append $('<div class="response--error"><p>Please fill in all required fields</p></div>')
+            .append $("<div class='response--error'><p>#{errorMsg}</p></div>")
             .velocity 'transition.slideRightBigIn'
     else
         form.velocity 'transition.slideRightBigOut',
@@ -60,10 +61,27 @@ $('#requestInfoForm').on 'submit', (e) ->
 
 validateForm = ($form) ->
     # Form is a jquery object
+    errorMsg = ''
     inputs = $('input', $form)
-    valid = true
+    required = true
     inputs.each (index, el) ->
         if el.value is ''
-            valid = false
+            required = false
             $(el).addClass 'field--invalid'
-    return valid
+    errorMsg += 'One or more required fields are empty.<br/>' if not required
+
+    emails = true
+    emailpattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+    emailInputs = $('input[type="email"]', $form)
+    emailInputs.each (index, el) ->
+        unless emailpattern.test el.value
+            emails = false
+            $(el).addClass 'field--invalid'
+    errorMsg += 'Please make sure emails are in the form <i>someone@somewhere.com</i><br/>' if not emails
+
+    return required and emails
+
+$(document).on 'ready', () ->
+    edit = document.getElementById('edit-link')
+    direct = document.getElementById('de')
+    edit?.parentNode?.replaceChild(direct, edit) if direct?
