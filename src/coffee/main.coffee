@@ -2,35 +2,38 @@
 errorMsg = ''
 
 $('.checklist-heading').on 'click', (e) ->
-        e.preventDefault()
-        el = $ this
-        unless el.hasClass 'solved'
-            el.addClass 'solved'
-            icon = $('.checklist-heading-icon', el)
-            icon.velocity
-                properties:
-                    rotateX: '180deg'
-                options:
-                    duration: 200
-                    easing: 'ease-in-out'
+    if $('html').hasClass 'basic-page'
+        return false
 
-        related = $(el.attr 'href')
-        if related.hasClass 'isClosed'
-            related.velocity 'slideDown',
+    e.preventDefault()
+    el = $ this
+    unless el.hasClass 'solved'
+        el.addClass 'solved'
+        icon = $('.checklist-heading-icon', el)
+        icon.velocity
+            properties:
+                rotateX: '180deg'
+            options:
                 duration: 200
-                easing: 'linear'
-                complete: () ->
-                    related.removeClass 'isClosed'
-                        .addClass 'isOpen'
-                    el.attr 'aria-expanded', 'true'
-        else
-            related.velocity 'slideUp',
-                duration: 500
                 easing: 'ease-in-out'
-                complete: () ->
-                    related.removeClass 'isOpen'
-                        .addClass 'isClosed'
-                    el.attr 'aria-expanded', 'false'
+
+    related = $(el.attr 'href')
+    if related.hasClass 'isClosed'
+        related.velocity 'slideDown',
+            duration: 200
+            easing: 'linear'
+            complete: () ->
+                related.removeClass 'isClosed'
+                    .addClass 'isOpen'
+                el.attr 'aria-expanded', 'true'
+    else
+        related.velocity 'slideUp',
+            duration: 500
+            easing: 'ease-in-out'
+            complete: () ->
+                related.removeClass 'isOpen'
+                    .addClass 'isClosed'
+                el.attr 'aria-expanded', 'false'
 
 $('#requestInfoForm').on 'submit', (e) ->
     e.preventDefault()

@@ -1,26 +1,17 @@
 extends _layout
 
-block head
-    script.
-        (function(w,d){
-            if (d.getElementsByTagName) {
-                var h = d.getElementsByTagName('html')[0];
-                h.className = h.className.replace(/basic-page/, '');
-            }
-        })(window, document);
-
 block content
     .pageWrap
         header.header.gradientTextureBg(role="header")
             .innerWrap(role="banner")
-                h1#pageHeading.visuallyhidden Check Your List — Are You On It?
-                img.header-banner(role="presentation" alt="" src="img/header.svg" aria-labelledby="pageHeading")
+                h1#pageHeading.visuallyhidden You've Taken the First Step — Now What's Stopping You?
+                img.header-banner(role="presentation" alt="" src="img/header-2.svg" aria-labelledby="pageHeading")
 
         main.main(role="main")
             .lede.innerWrap
                 h2.lede-heading Congratulations!
-                p Do you want a better job? A new career? A fresh start? To reconnect with a forgotten interest?
-                p You’ve taken the important first step in finding your Success Within Reach: You’re here! All you have to do is #[a(href="http://www.tccd.edu/Admissions/Apply/index.html") apply].
+                p Whether you’re looking to enter the workforce, get a better job or begin a new career altogether, a college education can put you on the path to success. But, maybe the challenges seem too big?
+                p At TCC, our commitment is putting Success Within Reach for every student who enters our doors. You’re here! All you have to do is #[a(href="http://www.tccd.edu/Admissions/Apply/index.html") apply] to find your new path. Grow for it!
             
             .checklistWrap
                 .checklist.innerWrap
@@ -126,7 +117,7 @@ block content
                 
                 .requestInfo-headingWrap
                     h3.requestInfo-phoneHeader If you have questions call:
-                    p.requestInfo-phoneNumber 817-515-1234
+                    p.requestInfo-phoneNumber 817-515-8223
         
         footer.footer.gradientTextureBg(role="footer")
             .footer-footerWrap.innerWrap
@@ -134,3 +125,38 @@ block content
                 p.footer-requiredLinks #[a(href="http://www.tccd.edu/About_TCC/Legal_Notices/index.html") Legal Notices] &middot; #[a(href="http://www.tccd.edu/About_TCC/Report_Fraud.html") Report Fraud]
                 
                 p.footer-copyright #[span#edit-link &copy;] Tarrant County College &mdash; All rights reserved
+
+    script.
+        (function(w,d){
+            var element = d.createElement('p');
+            element.id = 'delete-me';
+            if (! (w.getComputedStyle && d.getElementsByTagName && element.classList)) {
+                console.log('Basic page support only');
+                return;
+            }    
+            var html = d.getElementsByTagName('html')[0],
+            body = d.getElementsByTagName('body')[0],
+            properties = {
+                'webkitTransformStyle':'-webkit-transform-style',
+                'MozTransformStyle':'-moz-transform-style',
+                'msTransformStyle':'-ms-transform-style',
+                'transformStyle':'transform-style'
+            };
+
+            body.insertBefore(element, null);
+
+            for (var i in properties) {
+                if (element.style[i] !== undefined) {
+                    element.style[i] = 'preserve-3d';
+                }
+            }
+
+            var st = w.getComputedStyle(element, null),
+                transform = st.getPropertyValue("-webkit-transform-style") || st.getPropertyValue("-moz-transform-style") || st.getPropertyValue("-ms-transform-style") || st.getPropertyValue("transform-style");
+            
+            console.log('transform: ' + transform);
+            if (transform === 'preserve-3d') {
+                html.classList.remove('basic-page');
+            }
+            body.removeChild(element);
+        })(window, document);
