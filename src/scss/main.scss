@@ -45,7 +45,7 @@ body {
     margin-top: 14px;
 }
 
-.lede,
+.lede-heading,
 .checklist-tagline,
 .requestInfo-headingWrap,
 .narrativeHeading {
@@ -53,6 +53,21 @@ body {
     margin-top: 1rem;
     text-align: center;
 
+}
+
+.lede {
+    p {
+        margin-bottom: 1rem;
+        text-align: left;
+
+        &:last-of-type {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .innerWrap {
+        margin-bottom: 2.5rem;
+    }
 }
 
 .footer {
@@ -74,9 +89,9 @@ body {
 }
 
 h2 {
-    @include gotham(1.375rem, 800);
+    @include gotham(2rem, 800);
 
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
 a {
@@ -94,6 +109,7 @@ a {
 .narrativesWrap {
     background-color: $gray;
     margin: 20px 0;
+    padding-bottom: 10px;
     position: relative;
 
     &::before,
@@ -111,7 +127,7 @@ a {
 }
 
 .narrativesWrap::after { display: none; }
-.narrativesWrap { margin-bottom: 0; }
+.narrativesWrap { margin-bottom: 0; padding-bottom: 40px; }
 
 .checklist-itemWrap {
     margin: 0 auto 7px;
@@ -226,12 +242,13 @@ a {
 
 
 .checklist-reasons {
+    @inlude gotham(0.9rem);
     background: $white;
     border-radius: 0 0 $border-radius $border-radius;
     box-shadow: 2px 2px 2px transparentize($black, 0.8);
     line-height: 1.33;
     margin: -7px 10px 10px;
-    padding: 15px 10px;
+    padding: 20px 28px;
     text-align: left;
 
     p {
@@ -288,7 +305,7 @@ a {
         border: 1px solid $blue;
         border-radius: $border-radius;
         display: block;
-        padding: 5px 4px 4px;
+        padding: 5px 8px 4px;
         width: 100%;
     }
 }

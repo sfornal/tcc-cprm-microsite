@@ -4,7 +4,7 @@ block content
     .pageWrap
         header.header.gradientTextureBg(role="header")
             .innerWrap(role="banner")
-                h1#pageHeading.visuallyhidden You've Taken the First Step — Now What's Stopping You?
+                h1#pageHeading.visuallyhidden You’ve Taken the First Step — Now What’s Stopping You?
                 img.header-banner(role="presentation" alt="" src="img/header-2.svg" aria-labelledby="pageHeading")
 
         main.main(role="main")
@@ -15,11 +15,11 @@ block content
             
             .checklistWrap
                 .checklist.innerWrap
-                    h2.checklist-tagline So, what's in your way?
+                    h2.checklist-tagline So, what’s in your way?
                     
                     // Cost barrier
                     .checklist-itemWrap
-                        h3: a.checklist-heading(role="button" aria-expanded="true" href="#cost")
+                        h3: a.checklist-heading#checklist_cost(role="button" aria-expanded="true" href="#cost")
                             .checklist-headingText Cost
                             .checklist-heading-iconWrap(role="presentation")
                                 .checklist-heading-icon
@@ -36,7 +36,7 @@ block content
                     
                     // Time barrier
                     .checklist-itemWrap
-                        h3: a.checklist-heading(role="button" aria-expanded="true" href="#time")
+                        h3: a.checklist-heading#checklist_time(role="button" aria-expanded="true" href="#time")
                             .checklist-headingText Time
                             .checklist-heading-iconWrap(role="presentation")
                                 .checklist-heading-icon
@@ -52,7 +52,7 @@ block content
                     
                     // Location barrier
                     .checklist-itemWrap
-                        h3: a.checklist-heading(role="button" aria-expanded="true" href="#location")
+                        h3: a.checklist-heading#checklist_location(role="button" aria-expanded="true" href="#location")
                             .checklist-headingText Location
                             .checklist-heading-iconWrap(role="presentation")
                                 .checklist-heading-icon
@@ -68,7 +68,7 @@ block content
                     
                     // Self-Doubt barrier        
                     .checklist-itemWrap
-                        h3: a.checklist-heading(role="button" aria-expanded="true" href="#doubt")
+                        h3: a.checklist-heading#checklist_self_doubt(role="button" aria-expanded="true" href="#doubt")
                             .checklist-headingText Self-Doubt
                             .checklist-heading-iconWrap(role="presentation")
                                 .checklist-heading-icon
@@ -97,7 +97,7 @@ block content
             .requestInfo-formWrap.innerWrap
                 .requestInfo-headingWrap
                     h2.requestInfo-heading Request Information
-                    p I'm ready to make myself a priority! Please send me information to help me get started.
+                    p I’m ready to make myself a priority! Please send me information to help me get started.
                 form#requestInfoForm.requestInfo-form(action="http://apps.tccd.edu/RequestInfo/Handler.ashx" method="post")
                     .form-inputWrap
                         label.form-label(for="fullname") Full Name
@@ -121,7 +121,7 @@ block content
         
         section.narrativesWrap
             .innerWrap
-                h2.narrativeHeading See Jose's Success Story
+                h2.narrativeHeading View Jose’s Success Story
                 .videoEmbed
                     .videoEmbed-videoWrap
                         iframe(width="100%" src="https://www.youtube.com/embed/CtAq1JR14Nc?rel=0" frameborder="0" allowfullscreen="true").video
