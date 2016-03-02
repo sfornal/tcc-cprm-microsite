@@ -12,11 +12,11 @@ block content
                 h2.lede-heading Congratulations!
                 p Whether you’re looking to enter the workforce, get a better job or begin a new career altogether, a college education can put you on the path to success. But, maybe the challenges seem too big?
                 p At TCC, our commitment is putting Success Within Reach for every student who enters our doors. You’re here! All you have to do is #[a(href="http://www.tccd.edu/Admissions/Apply/index.html") apply] to find your new path. Grow for it!
-            
+
             .checklistWrap
                 .checklist.innerWrap
                     h2.checklist-tagline So, what’s in your way?
-                    
+
                     // Cost barrier
                     .checklist-itemWrap
                         h3: a.checklist-heading#checklist_cost(role="button" aria-expanded="true" href="#cost")
@@ -27,13 +27,13 @@ block content
                                         .checklist-icon-front-inner
                                     .checklist-icon-back
                                         .checklist-icon-back-inner
-                                        
+
                         #cost.checklist-reasons.isClosed
                             p At TCC, you can get a quality education at an affordable cost.
                             p Our tuition is just $59 per semester hour—that’s only $885 for a 15-hour semester of #[a(href="http://www.tccd.edu/Courses_and_Programs/Program_Offerings/index.html") degree-track courses] —taught by many of the same instructors who teach at area universities.
                             p If you need to jump into the workforce quickly, our wide variety of  #[a(href="http://www.tccd.edu/cie/workforce-training/index.html") Community &amp;&nbsp;Industry Education career and professional development programs] will provide a fast return on your education investment.
                             p   We also have financial assistance options. Learn more: #[a(href="http://www.tccd.edu/Student_Services/Financial_Aid/index.html") Financial Aid].
-                    
+
                     // Time barrier
                     .checklist-itemWrap
                         h3: a.checklist-heading#checklist_time(role="button" aria-expanded="true" href="#time")
@@ -44,12 +44,12 @@ block content
                                         .checklist-icon-front-inner
                                     .checklist-icon-back
                                         .checklist-icon-back-inner
-                                        
+
                         #time.checklist-reasons.isClosed
                             p Your life is busy, and your schedule is full, but at TCC, class is always in session!
                             p We offer online and on-campus classes during the day, at night and on the weekends. You can even complete your associate degree in 18 months or less by taking classes only on weekends if you are a full-time student in our #[a(href="http://www.tccd.edu/Courses_and_Programs/Weekend_College/index.html") Weekend College] on #[a(href="http://www.tccd.edu/Campuses_and_Centers/Trinity_River_Campus/index.html") Trinity River Campus]. You can also choose #[a(href="http://www.tccd.edu/eLearning/Online_Offerings/index.html") a fully online associate degree or certificate program].
                             p Learn more: #[a(href="http://www.tccd.edu/Campuses_and_Centers/TCC_Connect/index.html") TCC Connect Campus].
-                    
+
                     // Location barrier
                     .checklist-itemWrap
                         h3: a.checklist-heading#checklist_location(role="button" aria-expanded="true" href="#location")
@@ -60,13 +60,13 @@ block content
                                         .checklist-icon-front-inner
                                     .checklist-icon-back
                                         .checklist-icon-back-inner
-                                        
+
                         #location.checklist-reasons.isClosed
                             p Every year, we welcome students from nearly 140 North Texas zip codes.
                             p With #[a(href="http://www.tccd.edu/Campuses_and_Centers/index.html") 6 campuses and a variety of centers] throughout Fort Worth, Arlington, Hurst and online, TCC is easily accessible. Plus, you can get to many of our campuses via public transportation. If your family or work responsibilities would make attending class on campus difficult, you can choose from our wide range of #[a(href="http://www.tccd.edu/eLearning/Online_Offerings/index.html") online offerings].
-                            p Learn more: #[a(href="http://www.tccd.edu/Future_Students/index.html") Future Students].  
-                    
-                    // Self-Doubt barrier        
+                            p Learn more: #[a(href="http://www.tccd.edu/Future_Students/index.html") Future Students].
+
+                    // Self-Doubt barrier
                     .checklist-itemWrap
                         h3: a.checklist-heading#checklist_self_doubt(role="button" aria-expanded="true" href="#doubt")
                             .checklist-headingText Self-Doubt
@@ -76,7 +76,7 @@ block content
                                         .checklist-icon-front-inner
                                     .checklist-icon-back
                                         .checklist-icon-back-inner
-                                        
+
                         #doubt.checklist-reasons.isClosed
                             p No matter your age or your background, trying something new can be scary, but you’re not alone at TCC.
                             p You may not feel prepared for college-level studies, or you may not know what you want to pursue. You may be unsure about juggling school with work, family and bills. At TCC, we believe everyone is college material. That’s why we offer a wide variety of support services to help you find your path and then stay on course until you have reached your goal.
@@ -92,7 +92,7 @@ block content
                                             li: a(href="http://www.tccd.edu/Courses_and_Programs/Transitional/The_Bridge.html") The Bridge
                                     li: a(href="http://www.tccd.edu/Student_Services/Supplemental_Instruction/index.html") Supplemental Instruction
                                     li: a(href="http://www.tccd.edu/Student_Services/Labs.html") Learning Labs &amp;&nbsp;Tutoring (including 24/7 online tutoring)
-                                        
+
         .requestInfo
             .requestInfo-formWrap.innerWrap
                 .requestInfo-headingWrap
@@ -100,37 +100,37 @@ block content
                     p I’m ready to make myself a priority! Please send me information to help me get started.
                 form#requestInfoForm.requestInfo-form(action="http://apps.tccd.edu/RequestInfo/Handler.ashx" method="post")
                     .form-inputWrap
-                        label.form-label(for="fullname") Full Name
-                        input.form-input#fullname(type="text" name="fullname" placeholder="Jessica Jones" required value="")
-                    
+                        label.form-label(for="name") Full Name
+                        input.form-input#fullname(type="text" name="name" placeholder="Jessica Jones" required value="")
+
                     .form-inputWrap
                         label.form-label(for="email") Email
                         input.form-input#email(type="email" name="email" placeholder="jessica@example.com" required value="")
-                    
+
                     .form-inputWrap
                         input.button.button--submit#submit(type="submit" value="Submit" name="submit")
-                    
+
                     input(type="hidden" name="token" value="microsite")
                     input(type="hidden" name="source" value="Checklist Marketing Campaign")
-                
+
                 .requestInfo-formResponse
-                
+
                 .requestInfo-headingWrap
                     h3.requestInfo-phoneHeader If you have questions call:
                     p.requestInfo-phoneNumber 817-515-8223
-        
+
         section.narrativesWrap
             .innerWrap
                 h2.narrativeHeading View Jose’s Success Story
                 .videoEmbed
                     .videoEmbed-videoWrap
                         iframe(width="100%" src="https://www.youtube.com/embed/CtAq1JR14Nc?rel=0" frameborder="0" allowfullscreen="true").video
-        
+
         footer.footer.gradientTextureBg(role="footer")
             .footer-footerWrap.innerWrap
                 img.footer-logo(role="banner" alt="Tarrant County College—Success Within Reach" src="img/tcc-logo.svg")
                 p.footer-requiredLinks #[a(href="http://www.tccd.edu/About_TCC/Legal_Notices/index.html") Legal Notices] &middot; #[a(href="http://www.tccd.edu/About_TCC/Report_Fraud.html") Report Fraud]
-                
+
                 p.footer-copyright #[span#edit-link &copy;] Tarrant County College &mdash; All rights reserved
 
     script.
@@ -140,7 +140,7 @@ block content
             if (! (w.getComputedStyle && d.getElementsByTagName && element.classList)) {
                 console.log('Basic page support only');
                 return;
-            }    
+            }
             var html = d.getElementsByTagName('html')[0],
             body = d.getElementsByTagName('body')[0],
             properties = {
@@ -160,7 +160,7 @@ block content
 
             var st = w.getComputedStyle(element, null),
                 transform = st.getPropertyValue("-webkit-transform-style") || st.getPropertyValue("-moz-transform-style") || st.getPropertyValue("-ms-transform-style") || st.getPropertyValue("transform-style");
-            
+
             console.log('transform: ' + transform);
             if (transform === 'preserve-3d') {
                 html.classList.remove('basic-page');
