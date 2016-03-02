@@ -357,7 +357,13 @@ a {
 
 .videoEmbed {
     display: block;
+    margin: 0 auto 6rem;
+    max-width: 600px;
     width: 100%;
+
+    &:last-of-type {
+        margin-bottom: 2rem;
+    }
 }
 
 .videoEmbed-videoWrap {
