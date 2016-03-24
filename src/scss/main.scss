@@ -41,7 +41,8 @@ body {
 }
 
 .header-banner {
-    filter: drop-shadow(4px 4px 5px transparentize($black, 0.8));
+    // header-3.svg containes embedded bitmap drop shadows
+    //filter: drop-shadow(4px 4px 5px transparentize($black, 0.8));
     margin-top: 14px;
 }
 
@@ -102,7 +103,13 @@ a {
 }
 
 .checklist-tagline {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.checklist-subhead {
+    @include gotham(0.9rem, 300);
+    margin: 0 auto 2rem;
+    text-align: center;
 }
 
 .checklistWrap,
