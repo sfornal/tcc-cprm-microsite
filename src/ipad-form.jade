@@ -1,0 +1,79 @@
+extends _layout2
+
+block content
+    .pageWrap
+        header.header.gradientTextureBg(role="header")
+            .innerWrap(role="banner")
+                h1#pageHeading.visuallyhidden You’ve Taken the First Step — Now What’s Stopping You?
+                img.header-banner(role="presentation" alt="" src="img/header-4.svg" aria-labelledby="pageHeading")
+            
+        .requestInfo
+            .requestInfo-formWrap.innerWrap
+                .requestInfo-headingWrap
+                    h2.requestInfo-heading Request Information
+
+                form#requestInfoForm.requestInfo-form(action="http://apps.tccd.edu/RequestInfo/Handler.ashx" method="post")
+                    .form-inputWrap
+                        label.form-label(for="name") Full Name
+                        input.form-input#name(type="text" name="name" placeholder="Jessica Jones" required value="")
+
+                    .form-inputWrap
+                        label.form-label(for="email") Email
+                        input.form-input#email(type="email" name="email" placeholder="jessica@example.com" required value="")
+                    
+                    .form-inputWrap
+                        label.form-label(for="phone") Phone Number
+                        input.form-input#phone(type="tel" name="phone" placeholder="8175551212" required value="")
+
+                    .form-inputWrap
+                        input.button.button--submit#submit(type="submit" value="Submit" name="submit")
+
+                    input(type="hidden" name="token" value="microsite")
+                    input(type="hidden" name="source" value="iPad Sign Up Form at Main Street Arts")
+                
+                #loader.hidden.loader
+                .requestInfo-formResponse
+
+
+        footer.footer.gradientTextureBg.fixed(role="footer")
+            .footer-footerWrap.innerWrap
+                a(href="http://www.tccd.edu")
+                    img.footer-logo(role="banner" alt="Tarrant County College—Success Within Reach" src="img/tcc-logo.svg")
+                p.footer-requiredLinks #[a(href="http://www.tccd.edu/About_TCC/Legal_Notices/index.html") Legal Notices] &middot; #[a(href="http://www.tccd.edu/About_TCC/Report_Fraud.html") Report Fraud]
+
+                p.footer-copyright #[span#edit-link &copy;] Tarrant County College &mdash; All rights reserved
+
+    script.
+        (function(w,d){
+            var element = d.createElement('p');
+            element.id = 'delete-me';
+            if (! (w.getComputedStyle && d.getElementsByTagName && element.classList)) {
+                console.log('Basic page support only');
+                return;
+            }
+            var html = d.getElementsByTagName('html')[0],
+            body = d.getElementsByTagName('body')[0],
+            properties = {
+                'webkitTransformStyle':'-webkit-transform-style',
+                'MozTransformStyle':'-moz-transform-style',
+                'msTransformStyle':'-ms-transform-style',
+                'transformStyle':'transform-style'
+            };
+
+            body.insertBefore(element, null);
+
+            for (var i in properties) {
+                if (element.style[i] !== undefined) {
+                    element.style[i] = 'preserve-3d';
+                }
+            }
+
+            var st = w.getComputedStyle(element, null),
+                transform = st.getPropertyValue("-webkit-transform-style") || st.getPropertyValue("-moz-transform-style") || st.getPropertyValue("-ms-transform-style") || st.getPropertyValue("transform-style");
+
+            console.log('transform: ' + transform);
+            if (transform === 'preserve-3d') {
+                html.classList.remove('basic-page');
+            }
+            body.removeChild(element);
+        })(window, document);
