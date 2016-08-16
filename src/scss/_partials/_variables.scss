@@ -2,6 +2,7 @@ $gotham: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', 'Franklin Gothic', sans-s
 $black: #000;
 $white: #fff;
 $blue: #003b76;
+$teal: #007b97;
 $gray: #e6e7e8;
 $green: #8dc63f;
 $red: #cc003f;
@@ -12,3 +13,39 @@ $gradient-stop: #00295d;
 $gradient-bottom: #0c2753;
 $gradient-top: #1d3e73;
 $shadow-light: rgba(0, 0, 0, 0.2);
+$footer-background: #404041;
+$dark-gray: #292929;
+$medium-gray: #585858;
+$light-gray: #e9e9e9;
+$shadow-dark: rgba(0, 0, 0, 0.8);
+
+// Link color
+$tcc-link-color: #315cbf !default; //#2c74ae;
+$tcc-link-color-contrast: $white !default;
+
+$diagonal-stripe-small: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAFMN540AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtNJREFUeNpi4C/dYw3E7AxQwAgiQIJQ/k9kDojNj67iNkAAMQI5LECGOVTgOkhWE0mLCUiFHJAtCxL42O1ylAHZSpBZAAEENxCJFkMXQ5Y0B5mLSxLkI350MXRFUuiSAAEEcqU1yHVQgZNAzAzEJmAX43IUkFZlgvpEFaob7nkgEGMCuRYckhAghGTFK5BOFqDAGajAY5g2oNhtkOQVJIFHMIdBAxzFEezIDgPZKYXkCBNkhwEEECNU5Ueg4BW0yMQm9hhkNUyMBV0AmyKo2BWg2EeUEEaJcgg4CVT0B5sYNImYwNIMyNncQLYBPBFBNGETA/ldEVmMBYsiVVDsECFmAtL8ByhwEpb2oAZiE/sKFLtAyM+vQLFLhNhtgACMlLEOwkAMQ6ssDAz3BQwMbAz8/zccEgNbh+7dGSp1gKC4coMj0fGp58vZSRDVv7fv4rN4B35q8VPFcNAndfDDM3XQFWUKNhI75Tfv575mLubVrJbVPt+jYjEJLdjdkFkAN+lVMdpZbtxqoXZIJinWaC6fMGxTo3IVg3HbtFtW800j2Jm3QbCbiRgugmEhdGJHNMlMMQwFc+MW6rhv2V3E8MNUxxnUyKRFMNlxJmLogo3c03iWJbVJ3DBVHfcWoPMyRmEYhqFoBIIMHQodOnToXuhQ6P1v0EJu0K136NYILPFjZEtOxvAwivX/l0I4D6UUvSjQvKXIDu4FVzCBcmeGd5asAN2hASOchO9bQxga99RGcYEWrKyG4LAMZzGJmwVc/7SJEYBsJMDz0+YHnEUscGcwi7WKosoah2W5K4hqow8MTpth8HxW6FsdluVk9p8qbtEoJAiYS0JEWU5m7qEnNmoo17NByDXE5unjyAkbzGVr4B2cjWLg5PpvEeSJKMvZFuaJjQdtkLZLlGwcVZb9gtFk8wKka4MRrojtocuB/TCtHHkB3hNRlmskm+mDBm2QtkuUbH9jODTwAHpsAwAAAABJRU5ErkJggg==';
+
+// This is an extend-only selector for the diagonal hashed background image
+// used throughout the site
+%diagonal-bg {
+    background-color: $white;
+    background-image: url($diagonal-stripe-small);
+    background-size: 15px 15px;
+}
+
+//Breakpoints for media queries
+
+// Max size for desktop, constrains content and centers
+$max-container-width: 1280px !default;
+
+// First bp up from mobile layout. Tablet in portrait orientation
+$bp-medium: 'only screen and (min-width: 700px)' !default;
+
+// Tablet in landscape, or small laptop
+$bp-large: 'only screen and (min-width: 1024px)' !default;
+
+// Last breakpoint, for large desktop screens
+$bp-x-large: 'only screen and (min-width: 1280px)' !default;
+
+// Medium only breakpoint (special case use)
+$bp-medium-only: 'only screen and (min-width:700px) and (max-width: 1023px)' !default;

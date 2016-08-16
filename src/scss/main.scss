@@ -1,5 +1,6 @@
 @import '_partials/variables';
 @import '_partials/mixins';
+@import '_partials/common-footer';
 
 // Universal reset
 *,
@@ -13,9 +14,9 @@
 html {
     font-size: 100%;
 
-    @media (min-width: 600px) {
-        font-size: 125%;
-    }
+    // @media (min-width: 600px) {
+    //     font-size: 125%;
+    // }
 }
 
 body {
@@ -26,7 +27,7 @@ body {
 }
 
 .gradientTextureBg {
-    background: url('../img/texture.png'), radial-gradient($gradient-start 40%, $gradient-stop);
+    background: url('../img/jeans-texture.png'), radial-gradient($gradient-start 40%, $gradient-stop);
     background-color: $blue;
 }
 
@@ -39,13 +40,26 @@ body {
 .header {
     border-top: 6px solid $green;
     text-align: center;
+
+    .innerWrap {
+        padding-top: 0;
+    }
+
+    &::after {
+        @extend %diagonal-bg;
+        border-top: 6px solid $white;
+        content: '';
+        display: block;
+        height: 18px;
+        width: 100%;
+    }
 }
 
 .header-banner {
     // header-3.svg containes embedded bitmap drop shadows
     // header-4.svg contains SVG filters for shadows
-    //filter: drop-shadow(4px 4px 5px transparentize($black, 0.8));
-    margin-top: 14px;
+    filter: drop-shadow(4px 4px 7px transparentize($black, 0.6));
+    margin-top: -6px;
 }
 
 .lede-heading,
@@ -72,47 +86,34 @@ body {
         }
     }
 
-    .innerWrap {
-        margin-bottom: 2.5rem;
+    &.innerWrap {
+        margin-top: 2rem;
     }
-}
-
-.footer {
-    @include gotham($size: 8px);
-
-    color: $white;
-    text-align: center;
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    &.fixed {
-        bottom: 0;
-        left: 0;
-        position: fixed;
-        right: 0;
-    }
-}
-
-.footer-logo {
-    display: block;
-    margin: 0 auto 20px;
-    max-width: 200px;
 }
 
 h2 {
     @include gotham(2rem, 800);
-
     margin-bottom: 18px;
 }
 
 a {
-    @include gotham(inherit, 700);
-    $lightblue: lighten($blue, 10%);
-    color: $lightblue;
+    @include gotham(1em, 700);
+    // $lightblue: lighten($blue, 10%);
+    color: $tcc-link-color;
     text-decoration: underline;
+}
+
+//Blah blah blah
+//scss-lint:disable MergeableSelector QualifyingElement
+h2.requestInfo-heading {
+    margin-bottom: 0.15em;
+}
+
+//Blah blah blah
+//scss-lint:disable MergeableSelector QualifyingElement
+h3.requestInfo-heading {
+    @include gotham(1.25rem, 700);
+    margin: 0 auto 1em;
 }
 
 .checklist-tagline {
@@ -125,10 +126,9 @@ a {
     text-align: center;
 }
 
-.checklistWrap,
-.narrativesWrap {
+.checklistWrap {
     background-color: $gray;
-    margin: 20px 0;
+    margin: 0;
     padding-bottom: 10px;
     position: relative;
 
@@ -145,9 +145,6 @@ a {
     &::before { top: -20px; }
     &::after { bottom: -20px; }
 }
-
-.narrativesWrap::after { display: none; }
-.narrativesWrap { margin-bottom: 0; padding-bottom: 40px; }
 
 .checklist-itemWrap {
     margin: 0 auto 7px;
@@ -262,7 +259,7 @@ a {
 
 
 .checklist-reasons {
-    @inlude gotham(0.9rem);
+    @include gotham(0.9rem);
     background: $white;
     border-radius: 0 0 $border-radius $border-radius;
     box-shadow: 2px 2px 2px transparentize($black, 0.8);
@@ -293,7 +290,70 @@ a {
     }
 }
 
+//Success Stories Styling
+.successStoriesWrap {
+    padding: 30px 0;
+}
+
+.successStories-tagline,
+.successStories-subhead {
+    color: $white;
+    text-align: center;
+}
+
+.successStories-list {
+    list-style-type: none;
+    margin: 2rem auto;
+    max-width: 450px;
+}
+
+.successStory {
+    @include clearfix();
+    display: block;
+    margin: 1rem auto;
+    width: 100%;
+}
+
+.successStory-link {
+    @include clearfix();
+    color: $white;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    width: 100%;
+}
+
+.successStory-image {
+    border: 2px solid $white;
+    float: left;
+    margin-right: 20px;
+    width: 100px;
+}
+
+.successStory-text {
+    @include gotham(0.8em, 400);
+    float: left;
+    padding-top: 25px;
+
+    strong {
+        @include gotham(2em, 700);
+    }
+}
+
+
 //Request Info Form styling
+
+.requestInfo {
+    &::before {
+        @extend %diagonal-bg;
+        border-top: 6px solid $white;
+        content: '';
+        display: block;
+        height: 18px;
+        width: 100%;
+    }
+}
+
 .requestInfo-form {
     margin: 0 auto;
     max-width: 400px;
@@ -438,5 +498,55 @@ a {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+//Styles for subpages
+.lede-image {
+    display: block;
+    margin: 2rem auto 3rem;
+    max-width: 100%;
+}
+
+blockquote {
+    @include gotham(1.1rem, 700);
+    clear: both;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 2rem 20px;
+    position: relative;
+    width: 80%;
+    z-index: 500;
+
+    &::before,
+    &::after {
+        $quote-color: transparentize($green, 0.5);
+        @include gotham(5em, 800, italic);
+        color: $quote-color;
+        position: absolute;
+        z-index: z(BACKGROUND);
+    }
+
+    &::before {
+        content: '“';
+        left: -30px;
+        text-align: left;
+        top: -30px;
+    }
+
+    &::after {
+        bottom: -30px;
+        content: '”';
+        right: -15px;
+        text-align: right;
+    }
+
+    .attribution {
+        @include gotham(1rem, 400, italic);
+        text-align: right;
+
+        &::before {
+            content: '— ';
+        }
     }
 }

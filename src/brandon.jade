@@ -1,0 +1,98 @@
+extends _layout
+
+block content
+    .pageWrap
+        header.header.gradientTextureBg(role="header")
+            .innerWrap(role="banner")
+                h1#pageHeading.visuallyhidden For Many, College Seems Out of Reach
+                img.header-banner(role="presentation" alt="" src="img/header-5-01.svg" aria-labelledby="pageHeading")
+
+        main.main(role="main")
+            .lede.innerWrap
+                h2.lede-heading Brandon’s Success Story
+                //- h3.lede-heading You've taken the first step.
+                img.lede-image(src="img/Brandon.jpg" alt="A time-lapse image showing Brandon transition from an army veteran to a fire fighter")
+
+            .checklistWrap
+                .checklist.innerWrap
+                    blockquote
+                        p.quote “In high school I thought I was going to be a famous basketball player, but ended up going into the military. My grandma actually passed away in a fire right before I was getting ready to exit the Army. I knew then the career I wanted to do — to be a firefighter. As a single father I didn’t think I had enough time to put into school. People kept telling me about this great program at TCC. The Fire Academy has been awesome; everyone on the Northwest Campus is amazing. I just became a member of PTK honor society — I never thought I could do that. If you’re thinking about going to school, TCC is a great school with great programs.”
+                        p.attribution Brandon Brown, TCC Fire Academy Student
+                    
+        .successStoriesWrap.gradientTextureBg
+            .successStories.innerWrap
+                h2.successStories-tagline View Brandon’s Commercial
+                .videoEmbed
+                    .videoEmbed-videoWrap
+                        iframe(width="100%" src="https://www.youtube.com/embed/MD5-WvaSthY?rel=0" frameborder="0" allowfullscreen="true").video
+                
+                h2.successStories-tagline View Brandon’s Story
+                .videoEmbed
+                    .videoEmbed-videoWrap
+                        iframe(width="100%" src="https://www.youtube.com/embed/A4R2NS0FYoQ?rel=0" frameborder="0" allowfullscreen="true").video
+                
+        .requestInfo
+            .requestInfo-formWrap.innerWrap
+                .requestInfo-headingWrap
+                    h2.requestInfo-heading #[a(href="http://www.tccd.edu/admission/how-to-apply/") Apply] Today!
+                    h3.requestInfo-heading or #[br] Request Information
+                    p I’m ready to make myself a priority! Please send me information to help me get started.
+                form#requestInfoForm.requestInfo-form(action="http://apps.tccd.edu/RequestInfo/Handler.ashx" method="post")
+                    .form-inputWrap
+                        label.form-label(for="name") Full Name
+                        input.form-input#name(type="text" name="name" placeholder="Jessica Jones" required value="")
+
+                    .form-inputWrap
+                        label.form-label(for="email") Email
+                        input.form-input#email(type="email" name="email" placeholder="jessica@example.com" required value="")
+
+                    .form-inputWrap
+                        input.button.button--submit#submit(type="submit" value="Submit" name="submit")
+
+                    input(type="hidden" name="token" value="microsite")
+                    input(type="hidden" name="source" value="Checklist Marketing Campaign Brandon")
+
+                .requestInfo-formResponse
+
+                .requestInfo-headingWrap
+                    h3.requestInfo-phoneHeader If you have questions call:
+                    p.requestInfo-phoneNumber 817-515-8223
+
+        
+
+        include jade-partials/_footer.jade
+
+    script.
+        (function(w,d){
+            var element = d.createElement('p');
+            element.id = 'delete-me';
+            if (! (w.getComputedStyle && d.getElementsByTagName && element.classList)) {
+                console.log('Basic page support only');
+                return;
+            }
+            var html = d.getElementsByTagName('html')[0],
+            body = d.getElementsByTagName('body')[0],
+            properties = {
+                'webkitTransformStyle':'-webkit-transform-style',
+                'MozTransformStyle':'-moz-transform-style',
+                'msTransformStyle':'-ms-transform-style',
+                'transformStyle':'transform-style'
+            };
+
+            body.insertBefore(element, null);
+
+            for (var i in properties) {
+                if (element.style[i] !== undefined) {
+                    element.style[i] = 'preserve-3d';
+                }
+            }
+
+            var st = w.getComputedStyle(element, null),
+                transform = st.getPropertyValue("-webkit-transform-style") || st.getPropertyValue("-moz-transform-style") || st.getPropertyValue("-ms-transform-style") || st.getPropertyValue("transform-style");
+
+            console.log('transform: ' + transform);
+            if (transform === 'preserve-3d') {
+                html.classList.remove('basic-page');
+            }
+            body.removeChild(element);
+        })(window, document);

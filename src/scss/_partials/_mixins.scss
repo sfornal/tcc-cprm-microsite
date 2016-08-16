@@ -36,3 +36,29 @@
     position: static;
     width: auto;
 }
+
+// Clearfix mixin
+// Uses Nicolas Gallagher Micro-clearfix syntax, IE9+
+@mixin clearfix() {
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+// Media Queries
+@mixin bp($breakpoint: medium, $custom: '') {
+    @if ($custom != '') {
+        @media #{$custom} { @content; }
+    }
+    @else if ($breakpoint == medium) {
+        @media #{$bp-medium} { @content; }
+    }
+    @else if ($breakpoint == large) {
+        @media #{$bp-large} { @content; }
+    }
+    @else if ($breakpoint == x-large) {
+        @media #{$bp-x-large} { @content; }
+    }
+}
