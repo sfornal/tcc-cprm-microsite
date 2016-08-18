@@ -1,4 +1,5 @@
 .pageFooter {
+    @include gotham(16px);
     background-color: $footer-background;
     background-image: url('/_resources/images/textures/dark-texture-1.png');
     padding: 0;

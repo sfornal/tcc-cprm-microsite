@@ -19,7 +19,7 @@
   "devDependencies": {},
   "dependencies": {
     "jquery": "*",
-    "velocity": "~1.2.3",
-    "picturefill": "~3.0.1"
+    "velocity": "~1.3.0",
+    "picturefill": "*"
   }
 }

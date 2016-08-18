@@ -4,18 +4,22 @@ block content
     .pageWrap
         header.header.gradientTextureBg(role="header")
             .innerWrap(role="banner")
-                h1#pageHeading.visuallyhidden You’ve Taken the First Step — Now What’s Stopping You?
-                img.header-banner(role="presentation" alt="" src="img/header-5-01.svg" aria-labelledby="pageHeading")
+                a(href="https://www.tccd.edu/" target="_blank")
+                    img.header-banner-top(role="presentation" alt="" src="img/header-5-top.svg" aria-labelledby="collegeName")
+                    p#collegeName.visuallyhidden Tarrant County College
+                a(href="https://www.tccd.edu/outreach/checklist/")
+                    img.header-banner-bottom(role="presentation" alt="" src="img/header-5-bottom.svg" aria-labelledby="pageHeading")
+                    h1#pageHeading.visuallyhidden For Many, College Seems Out of Reach
 
         main.main(role="main")
             .lede.innerWrap
-                //- h2.lede-heading Congratulations!
+                h2.lede-heading Not anymore.
                 //- h3.lede-heading You've taken the first step.
-                p Whether you want a better job, a new career, a fresh start, or to reconnect with a forgotten interest, you've taken the important first step in finidng your #[b Success Within Reach].
+                p Whether you want a better job, a new career, a fresh start, or to reconnect with a forgotten interest, you've taken the important first step in finding your #[b Success Within Reach].
 
             .checklistWrap
                 .checklist.innerWrap
-                    h2.checklist-tagline Obstacles May Be Smaller Than They Appear
+                    h2.checklist-tagline Obstacles May Be Smaller#[br]Than They Appear
                     p.checklist-subhead (Choose one to see why!)
 
                     // Cost barrier

@@ -14,13 +14,13 @@
 html {
     font-size: 100%;
 
-    // @media (min-width: 600px) {
-    //     font-size: 125%;
-    // }
+    @media (min-width: 600px) {
+        font-size: 120%;
+    }
 }
 
 body {
-    @include gotham();
+    @include gotham(1rem, 400, initial, $gotham);
     background-color: $white;
     color: $blue;
     min-height: 100vh;
@@ -34,7 +34,7 @@ body {
 .innerWrap {
     margin: 0 auto;
     max-width: $max-width;
-    padding: 20px 24px;
+    padding: 24px;
 }
 
 .header {
@@ -55,11 +55,22 @@ body {
     }
 }
 
-.header-banner {
+.header-banner-top {
     // header-3.svg containes embedded bitmap drop shadows
     // header-4.svg contains SVG filters for shadows
     filter: drop-shadow(4px 4px 7px transparentize($black, 0.6));
-    margin-top: -6px;
+    margin: -6px auto 40px;
+    max-width: 500px;
+    min-width: 272px;
+    width: 80%;
+}
+
+.header-banner-bottom {
+    // header-3.svg containes embedded bitmap drop shadows
+    // header-4.svg contains SVG filters for shadows
+    filter: drop-shadow(4px 4px 7px transparentize($black, 0.6));
+    margin: 0 auto;
+    width: 100%;
 }
 
 .lede-heading,
@@ -67,27 +78,22 @@ body {
 .requestInfo-headingWrap,
 .narrativeHeading {
     margin-bottom: 2rem;
-    margin-top: 1rem;
     text-align: center;
-
-}
-
-.main .lede-heading:first-child {
-    margin-bottom: 0.5rem;
 }
 
 .lede {
     p {
         margin-bottom: 1rem;
-        text-align: left;
+        text-align: center;
 
         &:last-of-type {
-            margin-bottom: 2rem;
+            margin-bottom: 2.6rem;
         }
     }
 
     &.innerWrap {
         margin-top: 2rem;
+        max-width: 760px;
     }
 }
 
@@ -107,12 +113,17 @@ a {
 //scss-lint:disable MergeableSelector QualifyingElement
 h2.requestInfo-heading {
     margin-bottom: 0.15em;
+
+    a {
+        font-size: inherit;
+        font-weight: inherit;
+    }
 }
 
 //Blah blah blah
 //scss-lint:disable MergeableSelector QualifyingElement
 h3.requestInfo-heading {
-    @include gotham(1.25rem, 700);
+    @include gotham(1.5rem, 800);
     margin: 0 auto 1em;
 }
 
@@ -121,7 +132,7 @@ h3.requestInfo-heading {
 }
 
 .checklist-subhead {
-    @include gotham(0.9rem, 300);
+    @include gotham(1rem, 400);
     margin: 0 auto 2rem;
     text-align: center;
 }
@@ -143,12 +154,18 @@ h3.requestInfo-heading {
     }
 
     &::before { top: -20px; }
-    &::after { bottom: -20px; }
+    // &::after { bottom: -20px; }
 }
 
 .checklist-itemWrap {
-    margin: 0 auto 7px;
-    max-width: 550px;
+    margin: 0 auto 10px;
+    max-width: 450px;
+
+    h3 {
+        left: -10px;
+        position: relative;
+        z-index: 1;
+    }
 }
 
 .checklist-heading {
@@ -179,18 +196,18 @@ h3.requestInfo-heading {
     &.solved {
         text-decoration: line-through;
 
-        &::before {
-            background: $green;
-            border-radius: $border-radius 0 0 $border-radius;
-            content: '';
-            display: block;
-            height: 3.75rem;
-            left: -6px;
-            position: absolute;
-            top: -0.125rem;
-            width: 12px;
-            z-index: 3;
-        }
+        // &::before {
+        //     background: $green;
+        //     border-radius: $border-radius 0 0 $border-radius;
+        //     content: '';
+        //     display: block;
+        //     height: 3.75rem;
+        //     left: -6px;
+        //     position: absolute;
+        //     top: -0.125rem;
+        //     width: 12px;
+        //     z-index: 3;
+        // }
 
         .basic-page & {
             text-decoration: none;
@@ -259,14 +276,18 @@ h3.requestInfo-heading {
 
 
 .checklist-reasons {
-    @include gotham(0.9rem);
+    @include gotham(1rem);
     background: $white;
     border-radius: 0 0 $border-radius $border-radius;
     box-shadow: 2px 2px 2px transparentize($black, 0.8);
+    left: -10px;
     line-height: 1.33;
     margin: -7px 10px 10px;
-    padding: 20px 28px;
+    overflow: hidden;
+    padding: 24px 28px 14px 20px;
+    position: relative;
     text-align: left;
+    z-index: 0;
 
     p {
         margin-bottom: 1rem;
@@ -281,18 +302,18 @@ h3.requestInfo-heading {
 
 .isClosed {
     display: none;
-    height: 0;
+    max-height: 0;
 
     //If features aren't available, make sure content is shown
     .basic-page & {
         display: block;
-        height: auto;
+        max-height: auto;
     }
 }
 
 //Success Stories Styling
 .successStoriesWrap {
-    padding: 30px 0;
+    padding: 54px 0;
 }
 
 .successStories-tagline,
@@ -303,8 +324,8 @@ h3.requestInfo-heading {
 
 .successStories-list {
     list-style-type: none;
-    margin: 2rem auto;
-    max-width: 450px;
+    margin: 2.2rem auto;
+    max-width: 480px;
 }
 
 .successStory {
@@ -357,7 +378,7 @@ h3.requestInfo-heading {
 .requestInfo-form {
     margin: 0 auto;
     max-width: 400px;
-    padding-left: 20px;
+    // padding-left: 20px;
 }
 
 .form-inputWrap {
@@ -372,7 +393,7 @@ h3.requestInfo-heading {
     &::after { clear: both; }
 
     label {
-        @include gotham(0.8125rem, 400);
+        @include gotham(1rem, 400);
         display: block;
         margin-bottom: 3px;
     }
@@ -386,7 +407,7 @@ h3.requestInfo-heading {
         border: 1px solid $blue;
         border-radius: $border-radius;
         display: block;
-        padding: 5px 8px 4px;
+        padding: 7px 8px;
         width: 100%;
     }
 }
@@ -399,7 +420,7 @@ h3.requestInfo-heading {
     border: none;
     border-radius: $border-radius;
     color: $white;
-    padding: 5px 8px 3px;
+    padding: 6px 12px 4px;
 }
 
 .button--submit {
@@ -448,7 +469,7 @@ h3.requestInfo-heading {
     width: 100%;
 
     &:last-of-type {
-        margin-bottom: 2rem;
+        margin-bottom: 0rem;
     }
 }
 
@@ -543,6 +564,7 @@ blockquote {
 
     .attribution {
         @include gotham(1rem, 400, italic);
+        margin-top: 1em;
         text-align: right;
 
         &::before {

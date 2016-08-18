@@ -1,11 +1,22 @@
 //Mixins and utility classes
 
 //Sets the font to the standard font
-@mixin gotham($size: 1rem, $weight: 400, $style: normal) {
-    font-family: $gotham;
-    font-size: $size;
-    font-weight: $weight;
-    font-style: $style;
+@mixin gotham($size: '', $weight: '', $style: '', $family: '') {
+    @if ($family != '') {
+        font-family: $family;
+    }
+
+    @if ($size != '') {
+        font-size: $size;
+    }
+
+    @if ($weight != '') {
+        font-weight: $weight;
+    }
+
+    @if ($style != '') {
+        font-style: $style;
+    }
 }
 
 //Hide only visually, but have it available for screen readers:

@@ -19,21 +19,37 @@ $('.checklist-heading').on 'click', (e) ->
 
     related = $(el.attr 'href')
     if related.hasClass 'isClosed'
-        related.velocity 'slideDown',
-            duration: 200
-            easing: 'linear'
-            complete: () ->
-                related.removeClass 'isClosed'
-                    .addClass 'isOpen'
-                el.attr 'aria-expanded', 'true'
+        related.css
+            'display': 'block'
+            'height': 'auto'
+            'max-height': 0
+        related.velocity
+            properties:
+                'max-height': '1000px'
+            options:
+                duration: 400
+                easing: 'ease-in'
+                complete: () ->
+                    related.removeClass 'isClosed'
+                        .addClass 'isOpen'
+                        .css
+                            'display': ''
+                            'height': ''
+                            'max-height': ''
+                    el.attr 'aria-expanded', 'true'
     else
-        related.velocity 'slideUp',
-            duration: 500
-            easing: 'ease-in-out'
-            complete: () ->
-                related.removeClass 'isOpen'
-                    .addClass 'isClosed'
-                el.attr 'aria-expanded', 'false'
+        related.velocity
+            properties:
+                'height': 0
+            options:
+                duration: 400
+                easing: 'ease-out'
+                complete: () ->
+                    related.removeClass 'isOpen'
+                        .addClass 'isClosed'
+                        .css
+                            'height': ''
+                    el.attr 'aria-expanded', 'false'
 
 $('#requestInfoForm').on 'submit', (e) ->
     e.preventDefault()
