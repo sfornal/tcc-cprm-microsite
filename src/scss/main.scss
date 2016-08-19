@@ -313,7 +313,7 @@ h3.requestInfo-heading {
 
 //Success Stories Styling
 .successStoriesWrap {
-    padding: 54px 0;
+    padding: 54px 0 0;
 }
 
 .successStories-tagline,
@@ -333,6 +333,18 @@ h3.requestInfo-heading {
     display: block;
     margin: 1rem auto;
     width: 100%;
+
+    @include bp($custom: '(max-width: 600px)') {
+        margin: 2rem auto;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid $white;
+
+        &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding: 0;
+        }
+    }
 }
 
 .successStory-link {
@@ -349,6 +361,12 @@ h3.requestInfo-heading {
     float: left;
     margin-right: 20px;
     width: 100px;
+
+    @include bp($custom: '(max-width: 600px)') {
+        display: block;
+        float: none;
+        margin: 0 auto;
+    }
 }
 
 .successStory-text {
@@ -358,6 +376,14 @@ h3.requestInfo-heading {
 
     strong {
         @include gotham(2em, 700);
+    }
+
+    @include bp($custom: '(max-width: 600px)') {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        padding-top: 10px;
+        text-align: center;
     }
 }
 
@@ -570,5 +596,34 @@ blockquote {
         &::before {
             content: '— ';
         }
+    }
+}
+
+.checklist-heading:not(.solved) .checklist-heading-iconWrap {
+    animation-name: callout;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+}
+
+@keyframes callout {
+    0%, 100% {
+        transform: scale(1);
+    }
+    10%, 90% {
+        transform: scale(1);
+    }
+    20%, 80% {
+        transform: scale(1);
+    }
+    30%, 70% {
+        transform: scale(1.07);
+    }
+    40%, 60% {
+        transform: scale(1.02);
+    }
+    50% {
+        transform: scale(1.04);
     }
 }
