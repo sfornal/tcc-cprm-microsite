@@ -4,8 +4,12 @@ block content
     .pageWrap
         header.header.gradientTextureBg(role="header")
             .innerWrap(role="banner")
-                h1#pageHeading.visuallyhidden For Many, College Seems Out of Reach
-                img.header-banner(role="presentation" alt="" src="img/header-5-01.svg" aria-labelledby="pageHeading")
+                a(href="https://www.tccd.edu/" target="_blank")
+                    img.header-banner-top(role="presentation" alt="" src="img/header-5-top.svg" aria-labelledby="collegeName")
+                    p#collegeName.visuallyhidden Tarrant County College
+                a(href="https://www.tccd.edu/outreach/checklist/")
+                    img.header-banner-bottom(role="presentation" alt="" src="img/header-5-bottom.svg" aria-labelledby="pageHeading")
+                    h1#pageHeading.visuallyhidden For Many, College Seems Out of Reach
 
         main.main(role="main")
             .lede.innerWrap
@@ -21,12 +25,12 @@ block content
                     
         .successStoriesWrap.gradientTextureBg
             .successStories.innerWrap
-                h2.successStories-tagline View Sara’s Commercial
+                h2.successStories-tagline Sara’s Commercial
                 .videoEmbed
                     .videoEmbed-videoWrap
                         iframe(width="100%" src="https://www.youtube.com/embed/YXfqCuCbXWA?rel=0" frameborder="0" allowfullscreen="true").video
                 
-                h2.successStories-tagline View Sara’s Story
+                h2.successStories-tagline Behind-The-Scenes Interview
                 .videoEmbed
                     .videoEmbed-videoWrap
                         iframe(width="100%" src="https://www.youtube.com/embed/qIpfZNZ25VU?rel=0" frameborder="0" allowfullscreen="true").video
