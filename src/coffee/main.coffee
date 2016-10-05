@@ -1,6 +1,20 @@
 # Main JS for project
 errorMsg = ''
 
+ieVersion = () ->
+    ua = window.navigator.userAgent
+    if (ua.indexOf('Trident/7.0') > 0)
+        return 11
+
+    else if (ua.indexOf('Trident/6.0') > 0)
+        return 10
+
+    else if (ua.indexOf('Trident/5.0') > 0)
+        return 9
+
+    else
+        return 0  # not IE9, 10 or 11
+
 $('.checklist-heading').on 'click', (e) ->
     if $('html').hasClass 'basic-page'
         return false
@@ -101,6 +115,9 @@ validateForm = ($form) ->
     return required and emails
 
 $(document).on 'ready', () ->
+    if ieVersion() > 0
+        $('html').addClass 'basic-page'
+        console.log 'IE Detected'
     edit = document.getElementById('edit-link')
     direct = document.getElementById('de')
     edit?.parentNode?.replaceChild(direct, edit) if direct?

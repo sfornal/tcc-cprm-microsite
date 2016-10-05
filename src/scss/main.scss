@@ -242,6 +242,10 @@ h3.requestInfo-heading {
     transform: rotateY(0deg);
     width: 100%;
     z-index: 2;
+
+    .solved & {
+        z-index: 0;
+    }
 }
 
 .checklist-icon-front-inner {
@@ -307,7 +311,7 @@ h3.requestInfo-heading {
     //If features aren't available, make sure content is shown
     .basic-page & {
         display: block;
-        max-height: auto;
+        max-height: 100%;
     }
 }
 
@@ -335,9 +339,9 @@ h3.requestInfo-heading {
     width: 100%;
 
     @include bp($custom: '(max-width: 600px)') {
+        border-bottom: 2px solid $white;
         margin: 2rem auto;
         padding-bottom: 2rem;
-        border-bottom: 2px solid $white;
 
         &:last-child {
             border-bottom: none;
@@ -374,16 +378,16 @@ h3.requestInfo-heading {
     float: left;
     padding-top: 25px;
 
-    strong {
-        @include gotham(2em, 700);
-    }
-
     @include bp($custom: '(max-width: 600px)') {
         display: block;
         float: none;
         margin: 0 auto;
         padding-top: 10px;
         text-align: center;
+    }
+
+    strong {
+        @include gotham(2em, 700);
     }
 }
 
@@ -599,30 +603,35 @@ blockquote {
     }
 }
 
-.checklist-heading:not(.solved) .checklist-heading-iconWrap {
-    animation-name: callout;
+html:not(.basic-page) .checklist-heading:not(.solved) .checklist-heading-iconWrap {
+    animation-delay: 1s;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-delay: 1s;
-    animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+    animation-name: callout;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 @keyframes callout {
     0%, 100% {
         transform: scale(1);
     }
+
     10%, 90% {
         transform: scale(1);
     }
+
     20%, 80% {
         transform: scale(1);
     }
+
     30%, 70% {
         transform: scale(1.07);
     }
+
     40%, 60% {
         transform: scale(1.02);
     }
+
     50% {
         transform: scale(1.04);
     }
