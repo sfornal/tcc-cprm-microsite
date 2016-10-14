@@ -65,7 +65,7 @@ $('.checklist-heading').on 'click', (e) ->
                             'height': ''
                     el.attr 'aria-expanded', 'false'
 
-$('#requestInfoForm').on 'submit', (e) ->
+$('[id|="successInfoForm"]').on 'submit', (e) ->
     e.preventDefault()
     form = $ this
     if not validateForm(form)

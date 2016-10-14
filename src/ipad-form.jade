@@ -1,5 +1,8 @@
 extends _layout2
 
+block pageTitle
+    title Sign Up for Our Email Newsletter
+
 block content
     .pageWrap
         header.header.gradientTextureBg(role="header")
@@ -12,7 +15,7 @@ block content
                 .requestInfo-headingWrap
                     h2.requestInfo-heading Request Information
 
-                form#requestInfoForm.requestInfo-form(action="http://apps.tccd.edu/RequestInfo/Handler.ashx" method="post")
+                form#successInfoForm-ipad.requestInfo-form(action="http://apps.tccd.edu/RequestInfo/Handler.ashx" method="post")
                     .form-inputWrap
                         label.form-label(for="name") Full Name
                         input.form-input#name(type="text" name="name" placeholder="Jessica Jones" required value="")

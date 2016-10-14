@@ -1,5 +1,8 @@
 extends _layout
 
+block pageTitle
+    title Brandon's Success Story — What's Stopping You?
+
 block content
     .pageWrap
         header.header.gradientTextureBg(role="header")
@@ -38,10 +41,10 @@ block content
         .requestInfo
             .requestInfo-formWrap.innerWrap
                 .requestInfo-headingWrap
-                    h2.requestInfo-heading #[a(href="http://www.tccd.edu/admission/how-to-apply/") Apply] Today!
-                    h3.requestInfo-heading or #[br] Request Information
+                    h2.requestInfo-heading Request Information
                     p I’m ready to make myself a priority! Please send me information to help me get started.
-                form#requestInfoForm.requestInfo-form(action="http://apps.tccd.edu/RequestInfo/Handler.ashx" method="post")
+
+                form#successInfoForm-brandon.requestInfo-form(action="http://apps.tccd.edu/RequestInfo/Handler.ashx" method="post")
                     .form-inputWrap
                         label.form-label(for="name") Full Name
                         input.form-input#name(type="text" name="name" placeholder="Jessica Jones" required value="")
@@ -61,6 +64,7 @@ block content
                 .requestInfo-headingWrap
                     h3.requestInfo-phoneHeader If you have questions call:
                     p.requestInfo-phoneNumber 817-515-8223
+                    p.requestInfo-applyLink To apply, visit #[a(href="https://tccd.edu/") tccd.edu]
 
         
 

@@ -1,7 +1,7 @@
 # Main JS for project
 errorMsg = ''
 
-$('#requestInfoForm').on 'submit', (e) ->
+$('[id|="successInforForm"]').on 'submit', (e) ->
     e.preventDefault()
     form = $ this
     loader = $ '#loader'

@@ -1,5 +1,8 @@
 extends _layout
 
+block pageTitle
+    title What's Stopping You?
+
 block content
     .pageWrap
         header.header.gradientTextureBg(role="header")
@@ -34,10 +37,10 @@ block content
                                         .checklist-icon-back-inner
 
                         #cost.checklist-reasons.isClosed
-                            p At TCC, you can get a quality education at an affordable cost.
-                            p Our tuition is just $59 per semester hour—that’s only $885 for a 15-hour semester of #[a(href="http://www.tccd.edu/academics/tcc-catalog/courses-and-programs/") degree-track courses] —taught by many of the same instructors who teach at area universities.
-                            p If you need to jump into the workforce quickly, our wide variety of  #[a(href="http://www.tccd.edu/academics/cie/workforce-training/") Community &amp;&nbsp;Industry Education career and professional development programs] will provide a fast return on your education investment.
-                            p   We also have financial assistance options. Learn more: #[a(href="http://www.tccd.edu/services/paying-for-college/financial-aid/") Financial Aid].
+                            p We offer an affordable #[strong quality education] and #[strong financial aid] options.
+                            p Many of our courses are taught by the same instructors who teach at area universities.
+                            p Need to get to work quickly? Our workforce programs are a fast return on your education money.
+
 
                     // Time barrier
                     .checklist-itemWrap
@@ -51,9 +54,9 @@ block content
                                         .checklist-icon-back-inner
 
                         #time.checklist-reasons.isClosed
-                            p Your life is busy, and your schedule is full, but at TCC, class is always in session!
-                            p We offer online and on-campus classes during the day, at night and on the weekends. You can even complete your associate degree in 18 months or less by taking classes only on weekends if you are a full-time student in our #[a(href="http://www.tccd.edu/academics/tcc-catalog/weekend-college/") Weekend College] on #[a(href="http://www.tccd.edu/locations/trinity-river-campus/") Trinity River Campus]. You can also choose #[a(href="http://www.tccd.edu/academics/tcc-catalog/elearning/online-offerings/") a fully online associate degree or certificate program].
-                            p Learn more: #[a(href="http://www.tccd.edu/locations/tcc-connect/") TCC Connect Campus].
+                            p Your life is busy, but class is always in session at TCC.
+                            p We offer #[strong online] and #[strong on-campus classes] during the day, at night and on the weekends. With so many choices, you can fit TCC into your schedule.
+
 
                     // Location barrier
                     .checklist-itemWrap
@@ -67,9 +70,10 @@ block content
                                         .checklist-icon-back-inner
 
                         #location.checklist-reasons.isClosed
-                            p Every year, we welcome students from nearly 140 North Texas zip codes.
-                            p With #[a(href="http://www.tccd.edu/locations/") 6 campuses and a variety of centers] throughout Fort Worth, Arlington, Hurst and online, TCC is easily accessible. Plus, you can get to many of our campuses via public transportation. If your family or work responsibilities would make attending class on campus difficult, you can choose from our wide range of #[a(href="http://www.tccd.edu/academics/tcc-catalog/elearning/online-offerings/") online offerings].
-                            p Learn more: #[a(href="http://www.tccd.edu/students/new-to-college/") Future Students].
+                            p We’re in your neighborhood.
+                            p Our #[strong 6 campuses] and #[strong multiple centers] are located throughout Tarrant County in Fort Worth, Arlington and Hurst.
+                            p Still cannot get to campus? Choose from our #[strong online] offerings and study anywhere, anytime.
+
 
                     // Self-Doubt barrier
                     .checklist-itemWrap
@@ -83,47 +87,13 @@ block content
                                         .checklist-icon-back-inner
 
                         #doubt.checklist-reasons.isClosed
-                            p No matter your age or your background, trying something new can be scary, but you’re not alone at TCC.
-                            p You may not feel prepared for college-level studies, or you may not know what you want to pursue. You may be unsure about juggling school with work, family and bills. At TCC, we believe everyone is college material. That’s why we offer a wide variety of support services to help you find your path and then stay on course until you have reached your goal.
-                            p Learn More:
-                                ul
-                                    li: a(href="http://www.tccd.edu/admission/orientation/") Orientation
-                                    li: a(href="http://www.tccd.edu/academics/academic-help/advising/") Success Coaches &amp;&nbsp;Academic Advisors
-                                    li: a(href="http://www.tccd.edu/academics/cie/workforce-training/plus-50/plus-50-contact/") Plus 50 Concierges
-                                    li Peer and Faculty Mentor programs, such as:
-                                        ul
-                                            li: a(href="http://www.tccd.edu/services/student-life/leadership-opportunities/empowering-links/") Empowering Links
-                                            li: a(href="http://www.tccd.edu/services/student-life/leadership-opportunities/men-of-color-mentoring/") Men of Color Mentoring
-                                            li: a(href="http://www.tccd.edu/academics/support-programs/the-bridge/") The Bridge
-                                    li: a(href="http://www.tccd.edu/academics/academic-help/supplemental-instruction/") Supplemental Instruction
-                                    li: a(href="http://www.tccd.edu/academics/academic-help/labs-tutoring/") Learning Labs &amp;&nbsp;Tutoring (including 24/7 online tutoring)
-                
-        .successStoriesWrap.gradientTextureBg
-            .successStories.innerWrap
-                h2.successStories-tagline So, What's Stopping You?
-                p.successStories-subhead A high school graduate studying dance, a U.S. Army veteran training to become a fireman, and a mother of three learning culinary arts explain why they chose TCC.
-                
-                ul.successStories-list
-                    li.successStory
-                        a.successStory-link(href="jose.html")
-                            img.successStory-image(src="img/Jose-small.jpg", alt="Jose, a high school graduate learning dance")
-                            p.successStory-text View#[br]#[strong Jose’s Success Story]
-                    li.successStory
-                        a.successStory-link(href="brandon.html")
-                            img.successStory-image(src="img/Brandon-small.jpg", alt="Brandon, and army veteran studying to be a firefighter")
-                            p.successStory-text View#[br]#[strong Brandon’s Success Story]
-                    li.successStory
-                        a.successStory-link(href="sara.html")
-                            img.successStory-image(src="img/Sara-small.jpg", alt="Sara, a mother learning the culinary arts")
-                            p.successStory-text View#[br]#[strong Sara’s Success Story]
+                            p Feel unprepared? Unsure of what to study? Worried about juggling school with work, family and bills?
+                            p Trying something new can be scary—no matter your age or your background—but #[strong you’re not alone] at TCC. Our support services can help you every step of the way.
 
+        
         .requestInfo
             .requestInfo-formWrap.innerWrap
-                .requestInfo-headingWrap
-                    h2.requestInfo-heading #[a(href="http://www.tccd.edu/admission/how-to-apply/") Apply] Today!
-                    h3.requestInfo-heading or #[br] Request Information
-                    p I’m ready to make myself a priority! Please send me information to help me get started.
-                form#requestInfoForm.requestInfo-form(action="http://apps.tccd.edu/RequestInfo/Handler.ashx" method="post")
+                form#successInfoForm.requestInfo-form(action="http://apps.tccd.edu/RequestInfo/Handler.ashx" method="post")
                     .form-inputWrap
                         label.form-label(for="name") Full Name
                         input.form-input#name(type="text" name="name" placeholder="Jessica Jones" required value="")
@@ -143,7 +113,28 @@ block content
                 .requestInfo-headingWrap
                     h3.requestInfo-phoneHeader If you have questions call:
                     p.requestInfo-phoneNumber 817-515-8223
+                    p.requestInfo-applyLink To apply, visit #[a(href="https://tccd.edu/") tccd.edu]
+        
+        .successStoriesWrap.gradientTextureBg
+            .successStories.innerWrap
+                h2.successStories-tagline So, What's Stopping You?
+                p.successStories-subhead A high school graduate studying dance, a U.S. Army veteran training to become a fireman, and a mother of three learning culinary arts explain why they chose TCC.
+                
+                ul.successStories-list
+                    li.successStory
+                        a.successStory-link(href="jose.html")
+                            img.successStory-image(src="img/Jose-small.jpg", alt="Jose, a high school graduate learning dance")
+                            p.successStory-text View#[br]#[strong Jose’s Success Story]
+                    li.successStory
+                        a.successStory-link(href="brandon.html")
+                            img.successStory-image(src="img/Brandon-small.jpg", alt="Brandon, and army veteran studying to be a firefighter")
+                            p.successStory-text View#[br]#[strong Brandon’s Success Story]
+                    li.successStory
+                        a.successStory-link(href="sara.html")
+                            img.successStory-image(src="img/Sara-small.jpg", alt="Sara, a mother learning the culinary arts")
+                            p.successStory-text View#[br]#[strong Sara’s Success Story]
 
+        
         
 
         include jade-partials/_footer.jade
